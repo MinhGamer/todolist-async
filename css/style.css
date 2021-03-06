@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fee9f0;
   font-size: 16px;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .card__header::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -45,7 +45,7 @@ body {
   position: relative;
 }
 .card__body::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -35px;
   left: -50px;
@@ -111,7 +111,7 @@ span.toggle-btn:hover {
 .filter-btn:after {
   height: 150px;
   width: 150px;
-  content: "";
+  content: '';
   background-color: #fa396b;
   position: absolute;
   top: -86px;
@@ -241,7 +241,7 @@ ul.todo#completed {
 }
 
 ul.todo#completed:before {
-  content: "";
+  content: '';
   width: 150px;
   height: 1px;
   background: #d8e5e0;
@@ -254,12 +254,12 @@ ul.todo#completed:before {
 }
 
 ul.todo#todo:empty:after {
-  content: "You have nothing to-do!";
+  content: 'You have nothing to-do!';
   margin: 15px 0 0 0;
 }
 
 ul.todo#completed:empty:after {
-  content: "You have yet to complete any tasks.";
+  content: 'You have yet to complete any tasks.';
 }
 
 ul.todo#todo:after,
@@ -296,17 +296,22 @@ ul.todo li .buttons .complete:hover {
   color: #25b99a;
 }
 
-ul.todo#todo li .buttons .complete .fas {
+ul.todo#todo li .buttons .complete {
   display: none;
 }
 
-ul.todo#todo li .buttons .complete .far {
-  display: block;
+ul.todo#todo li .buttons .complete {
+  display: inline-block;
 }
 
-ul.todo#completed li .buttons .complete .fas {
-  display: block;
+ul.todo#completed li .buttons .complete {
+  display: inline-block;
   color: #25b99a;
+}
+
+ul.todo#completed li {
+  color: #25b99a;
+  font-weight: 700;
 }
 
 ul.todo#completed li .buttons .complete .far {
@@ -319,4 +324,98 @@ ul.todo#completed span {
 
 .alert-danger {
   color: red;
+}
+
+/* loader */
+#loader {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  padding: 6rem 0;
+  display: none;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #0f2027;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

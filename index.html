@@ -14,6 +14,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -41,7 +47,22 @@
             </button>
           </div>
           <div id="notiInput" class="alert-danger" style="display: none"></div>
-          <div class="card__todo">
+
+          <!-- loader -->
+          <div id="loader">
+            <div class="lds-roller">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div id="card__todo" class="card__todo">
             <!-- Uncompleted tasks -->
             <ul class="todo" id="todo"></ul>
             <!-- Completed tasks -->
@@ -57,16 +78,24 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script>
+
     <script>
       $(function () {
-        $(".toggle-btn").click(function () {
-          $(".filter-btn").toggleClass("open");
+        $('.toggle-btn').click(function () {
+          $('.filter-btn').toggleClass('open');
         });
 
-        $(".filter-btn a").click(function () {
-          $(".filter-btn").removeClass("open");
+        $('.filter-btn a').click(function () {
+          $('.filter-btn').removeClass('open');
         });
       });
     </script>
+
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
